@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="row"> 
+      <div class="col-sm-3">
+  
+        <h3>Quant</h3>
+          <form  class="form-inline" >
+            <div class="form-group">
+                <label >Current</label>
+                <input type="number" class="form-control" [(ngModel)]="Qcurrent"  name="Qcurrent" min="1" max="60" maxlength="2" pattern="[1-6][0-9]" required >
+             
+            </div> 
+          </form>
+        
+      </div>
+      <div class="col-sm-3">
+  
+          <h3><font color="white">Quant</font></h3>
+            <form  class="form-inline" >
+              <div class="form-group">
+                  
+                  <label >Target</label>
+                  <input type="number" placeholder="1-60" class="form-control" [(ngModel)]="Qtarget" name="Qtarget"  min="1" max="60" maxlength="2" pattern="[1-6][0-9]"required >
+              </div> 
+            </form>
+          
+        </div>
+      <div class="col-sm-3">
+          <h3>Verbal</h3>
+            <form  class="form-inline" >
+              <div class="form-group">
+                
+              <label >Current</label>
+              <input type="number" placeholder="1-60" class="form-control" [(ngModel)]="Vcurrent" name="Vcurrent"  min="1" max="60" maxlength="2" pattern="[1-6][0-9]" required >
+      
+              </div>
+            </form>
+        
+      </div>
+      <div class="col-sm-3">
+          <h3><font color="white">Verbal</font></h3>
+            <form  class="form-inline" >
+              <div class="form-group">
+                
+                <label >Target</label>
+                <input type="number" placeholder="1-60" class="form-control" [(ngModel)]="Vtarget" name="Vtarget"  min="1" max="60" maxlength="2" pattern="[1-6][0-9]" required >
+              </div>
+            </form>
+        
+      </div>
+    </div>
+  
+  <br>
+  
+    <div class="col text-center">
+        <button class="btn btn-primary " (click)="onClick()">Submit and Refresh</button>
+    </div>
+  </div> 
+
+ <br> <br> <br>
+
+ <div class="container" [hidden]="hide">
+  <div class="card-header">
+     <h2>Total Score</h2>
+     <h2>640</h2>
+     <br>
+    <div class="cardblock">
+     <div class="progress">
+       <div class="progress-bar" style="background-color: #0fa2eb" [style.width]="tcp()">
+         
+       </div>
+       <div class="progress-bar" style="background-color: #ffe28a; color:black" [style.width]="ttp()">
+         {{TD}}
+       </div>
+     </div>
+   </div>
+   <br>
+     <p >Your estimated GMAT score per your performance in this mock test is {{ totalCS }}, {{ higher }} </p>
+  </div>
+ </div>
+ <br> <br> <br>
+ 
+ <div class="container" [hidden]="hide">
+     <div class="row"> 
+         <div class="col-sm-6">
+             
+                 <h4>Quant Score</h4>
+                 <h2>Q{{ Qcurrent }}</h2>
+                 <br>
+             <div class="cardblock">
+                 <div class="progress">
+                 <div class="progress-bar" style="background-color: #0fa2eb" [style.width]="qcp()">
+                     
+                 </div>
+                 <div class="progress-bar" style="background-color: #ffe28a; color:black" [style.width]="qtp()">
+                     {{QD}}
+                 </div>
+                 </div>
+             </div>
+             <br>
+                 <p>Your estimated quantitative score per your performance in this mock test is Q{{ Qcurrent }}, {{ qhigher }}  <p>
+             
+         </div> 
+         <div class="col-sm-6">
+                 
+                     <h4>Verbal Score</h4>
+                     <h2>V{{Vcurrent}}</h2>
+                     <br>
+                 <div class="cardblock">
+                     <div class="progress">
+                     <div class="progress-bar" style="background-color: #0fa2eb" [style.width]="vcp()" >
+                         
+                     </div>
+                     <div class="progress-bar" style="background-color: #ffe28a; color:black" [style.width]="vtp()">
+                         {{VD}}
+                     </div>
+                 </div>
+                 <br>
+                     <p>Your estimated Verbal score per your performance in this mock test is V{{ Vcurrent }}, {{ vhigher }}  </p>
+              
+         </div>       
+ 
+     </div>    
+     
+ </div>
+  
+  
+  
